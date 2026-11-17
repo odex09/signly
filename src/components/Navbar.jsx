@@ -20,7 +20,6 @@ export default function Navbar({ onNavigate }) {
   }, [menuOpen]);
 
   const navLinks = [
-    { href: '#features', label: 'Fonctionnalités' },
     { href: '#how',      label: 'Comment ça marche' },
     { href: '#pricing',  label: 'Tarifs' },
     { href: '#faq',      label: 'FAQ' },

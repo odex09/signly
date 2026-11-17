@@ -28,22 +28,13 @@ export default function LandingPage({ onNavigate }) {
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-16 sm:pt-24 pb-10">
           <div className="text-center max-w-3xl mx-auto animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700 mb-7">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              Nouveau — Signature qualifiée eIDAS &amp; horodatage blockchain
-              <Icon name="arrow-right" className="w-3.5 h-3.5 text-slate-400" />
-            </div>
-
+           
             <h1 className="text-[42px] leading-[1.05] sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-slate-900">
               Signez vos documents<br className="hidden sm:block" /> en <span className="grad-text">quelques secondes</span>.
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto">
-              Signly est la plateforme de signature électronique qui accélère vos contrats.
-              Envoyez, faites signer et archivez — avec une <strong className="text-slate-800 font-semibold">valeur légale</strong> incontestable.
+              Signly est la plateforme de signature électronique qui accélère vos contrats. Signer, télécharger et envoyer vos document en quelques clic.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -65,11 +56,6 @@ export default function LandingPage({ onNavigate }) {
               </button>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-slate-500 font-medium">
-              <span className="inline-flex items-center gap-1.5"><Icon name="check" className="w-4 h-4 text-emerald-500" /> Sans carte bancaire</span>
-              <span className="inline-flex items-center gap-1.5"><Icon name="check" className="w-4 h-4 text-emerald-500" /> 3 documents offerts</span>
-              <span className="inline-flex items-center gap-1.5"><Icon name="check" className="w-4 h-4 text-emerald-500" /> Conforme eIDAS</span>
-            </div>
           </div>
 
           {/* APP PREVIEW */}
@@ -184,126 +170,6 @@ export default function LandingPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* LOGOS */}
-      <section className="py-14 border-y border-slate-100 bg-slate-50/50">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-8">
-          Plus de 20 000 entreprises signent avec Signly
-        </p>
-        <div className="max-w-6xl mx-auto px-6 overflow-hidden">
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60">
-            <span className="text-xl font-extrabold tracking-tight text-slate-500">Nebula</span>
-            <span className="text-xl font-bold tracking-tight text-slate-500 italic">Vertex</span>
-            <span className="text-xl font-extrabold tracking-tighter text-slate-500">QUANTUM</span>
-            <span className="text-xl font-bold text-slate-500">lumio<span className="text-emerald-400">.</span></span>
-            <span className="text-xl font-extrabold tracking-tight text-slate-500">Arcade</span>
-            <span className="text-xl font-semibold tracking-wide text-slate-500">HOKKAIDO</span>
-            <span className="text-xl font-extrabold text-slate-500">pixel<span className="font-light">form</span></span>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section id="features" className="py-24 sm:py-32 relative">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wide mb-5">
-              Fonctionnalités
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]">
-              La signature <span className="grad-text">nouvelle génération</span>
-            </h2>
-            <p className="mt-5 text-lg text-slate-500">
-              Une suite complète, pensée pour les équipes juridiques exigeantes et les indépendants pressés.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* Big Gradient Card */}
-            <div className="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 p-8 sm:p-10 text-white card-hover">
-              <div className="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
-              <div className="absolute -right-8 bottom-0 w-48 h-48 bg-white/10 rounded-full blur-xl"></div>
-              <div className="relative">
-                <div className="w-12 h-12 rounded-2xl bg-white/15 grid place-items-center mb-6 backdrop-blur">
-                  <Icon name="shield-check" className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Valeur légale incontestable</h3>
-                <p className="text-white/80 leading-relaxed max-w-md">
-                  Chaque signature est horodatée, scellée et traçable. Conforme eIDAS, ESIGN &amp; UETA — avec piste d'audit infalsifiable.
-                </p>
-                <div className="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="rounded-xl bg-white/10 backdrop-blur border border-white/20 p-3 text-center">
-                    <div className="text-lg font-extrabold">eIDAS</div>
-                    <div className="text-[10px] text-white/60 mt-0.5">Niveau avancé</div>
-                  </div>
-                  <div className="rounded-xl bg-white/10 backdrop-blur border border-white/20 p-3 text-center">
-                    <div className="text-lg font-extrabold">ESIGN</div>
-                    <div className="text-[10px] text-white/60 mt-0.5">US compliant</div>
-                  </div>
-                  <div className="rounded-xl bg-white/10 backdrop-blur border border-white/20 p-3 text-center">
-                    <div className="text-lg font-extrabold">RGPD</div>
-                    <div className="text-[10px] text-white/60 mt-0.5">Hébergé en UE</div>
-                  </div>
-                  <div className="rounded-xl bg-white/10 backdrop-blur border border-white/20 p-3 text-center">
-                    <div className="text-lg font-extrabold">ISO</div>
-                    <div className="text-[10px] text-white/60 mt-0.5">27001</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-8 card-hover">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 grid place-items-center mb-6">
-                <Icon name="history" className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Piste d'audit complète</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed">
-                Chaque ouverture, signature ou refus est journalisée : IP, navigateur, horodatage, empreinte du document.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-8 card-hover">
-              <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 grid place-items-center mb-6">
-                <Icon name="users" className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Signature multi-parties</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed">
-                Séquentielle ou parallèle, jusqu'à 50 signataires. Chacun reçoit son tour au bon moment.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-8 card-hover">
-              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 grid place-items-center mb-6">
-                <Icon name="repeat" className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Modèles réutilisables</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed">
-                Créez vos contrats types une fois. Champs dynamiques, envoi en un clic, gain de temps garanti.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-8 card-hover">
-              <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 grid place-items-center mb-6">
-                <Icon name="smartphone" className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Signature mobile</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed">
-                Vos signataires signent depuis leur téléphone, sans app à installer. Expérience pensée mobile-first.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-8 card-hover">
-              <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 grid place-items-center mb-6">
-                <Icon name="lock" className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Sécurité bancaire</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed">
-                Chiffrement AES-256, 2FA, SSO, sauvegardes redondantes. Vos documents sont protégés à chaque étape.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* HOW IT WORKS */}
       <section id="how" className="py-24 sm:py-28 bg-slate-50/70 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -312,7 +178,7 @@ export default function LandingPage({ onNavigate }) {
               Comment ça marche
             </span>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]">
-              Trois étapes. C'est tout.
+              Trois étapes, C'est tout.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 relative">
@@ -473,81 +339,6 @@ export default function LandingPage({ onNavigate }) {
                 <li className="flex gap-2.5"><Icon name="check" className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" /> SSO &amp; API</li>
                 <li className="flex gap-2.5"><Icon name="check" className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" /> Support dédié</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="py-24 sm:py-28 bg-slate-50/70 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="inline-block px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wide mb-5">
-              Témoignages
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]">
-              Ils ont <span className="grad-text">accéléré</span> leurs signatures
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="rounded-3xl bg-white border border-slate-200 p-7 card-hover">
-              <div className="flex gap-0.5 text-amber-400 mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <Icon key={i} name="star" className="w-4.5 h-4.5 fill-current" stroke="none" />
-                ))}
-              </div>
-              <p className="text-slate-700 leading-relaxed text-[15px]">
-                « Nos contrats clients passaient de 8 jours à 6 heures en moyenne. Le suivi en temps réel a tout changé. »
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 grid place-items-center text-white text-sm font-bold">
-                  CM
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Camille Moreau</div>
-                  <div className="text-xs text-slate-500">Directrice juridique, Nebula</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-7 card-hover">
-              <div className="flex gap-0.5 text-amber-400 mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <Icon key={i} name="star" className="w-4.5 h-4.5 fill-current" stroke="none" />
-                ))}
-              </div>
-              <p className="text-slate-700 leading-relaxed text-[15px]">
-                « La piste d'audit est d'une clarté rare. En cas de litige, on a tout sous la main — horodatage, IP, empreinte. »
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-400 to-purple-500 grid place-items-center text-white text-sm font-bold">
-                  TL
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Thomas Lefèvre</div>
-                  <div className="text-xs text-slate-500">Avocat associé, Vertex</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl bg-white border border-slate-200 p-7 card-hover">
-              <div className="flex gap-0.5 text-amber-400 mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <Icon key={i} name="star" className="w-4.5 h-4.5 fill-current" stroke="none" />
-                ))}
-              </div>
-              <p className="text-slate-700 leading-relaxed text-[15px]">
-                « Le dessin de signature sur mobile fonctionne parfaitement. Nos clients signent depuis leur canapé, sans friction. »
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 grid place-items-center text-white text-sm font-bold">
-                  SK
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Sofia Kaddour</div>
-                  <div className="text-xs text-slate-500">Fondatrice, Studio Arcade</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

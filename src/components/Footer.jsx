@@ -31,16 +31,13 @@ export default function Footer({ onNavigate }) {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Produit</h4>
             <ul className="space-y-2.5 text-sm text-slate-500">
-              <li><a href="#features" className="hover:text-emerald-600 transition">Fonctionnalités</a></li>
               <li><a href="#pricing" className="hover:text-emerald-600 transition">Tarifs</a></li>
               <li><a href="#how" className="hover:text-emerald-600 transition">Comment ça marche</a></li>
-              <li><button onClick={() => onNavigate('sign')} className="hover:text-emerald-600 transition cursor-pointer">Salle de signature</button></li>
             </ul>
           </div>
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Ressources</h4>
             <ul className="space-y-2.5 text-sm text-slate-500">
-              <li><a href="#" className="hover:text-emerald-600 transition">Blog</a></li>
               <li><a href="#" className="hover:text-emerald-600 transition">Centre d'aide</a></li>
               <li><a href="#" className="hover:text-emerald-600 transition">Statut des services</a></li>
             </ul>
@@ -49,9 +46,7 @@ export default function Footer({ onNavigate }) {
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Légal</h4>
             <ul className="space-y-2.5 text-sm text-slate-500">
               <li><a href="#" className="hover:text-emerald-600 transition">Confidentialité</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">CGU</a></li>
               <li><a href="#" className="hover:text-emerald-600 transition">Mentions légales</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Conformité RGPD</a></li>
             </ul>
           </div>
         </div>

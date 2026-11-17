@@ -8,15 +8,6 @@ export default function DashboardHome({ onNavigate }) {
   const limit = currentPlan.docsPerMonth;
   const used = docsThisMonth();
   const remaining = limit === Infinity ? '∞' : Math.max(0, limit - used);
-  const recent = documents.slice(0, 5);
-
-  const formatDate = (iso) => {
-    try {
-      return new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
-    } catch {
-      return '';
-    }
-  };
 
   return (
     <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1500px] w-full mx-auto animate-fade-up">
@@ -26,41 +17,6 @@ export default function DashboardHome({ onNavigate }) {
             Tableau de bord
           </h1>
           <p className="text-sm text-slate-500 mt-1">Voici l'état de vos signatures aujourd'hui.</p>
-        </div>
-      </div>
-
-      {/* Usage card */}
-      <div className="grid sm:grid-cols-3 gap-4 mb-7">
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-[12px] text-slate-500 font-medium">Plan actuel</p>
-            <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">{currentPlan.name}</span>
-          </div>
-          <p className="text-2xl font-extrabold text-slate-900">
-            {currentPlan.price === 0 ? 'Gratuit' : `${currentPlan.price} €/mois`}
-          </p>
-          <button onClick={() => onNavigate('billing')} className="mt-3 text-xs font-semibold text-emerald-600 hover:text-emerald-700 cursor-pointer">
-            Gérer l'abonnement →
-          </button>
-        </div>
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
-          <p className="text-[12px] text-slate-500 font-medium">Documents ce mois</p>
-          <p className="text-2xl font-extrabold text-slate-900 mt-1">
-            {used} <span className="text-base font-medium text-slate-400">/ {limit === Infinity ? '∞' : limit}</span>
-          </p>
-          <div className="mt-3 h-1.5 rounded-full bg-slate-100 overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all"
-              style={{ width: limit === Infinity ? '30%' : `${Math.min(100, (used / limit) * 100)}%` }}
-            />
-          </div>
-        </div>
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
-          <p className="text-[12px] text-slate-500 font-medium">Documents restants</p>
-          <p className="text-2xl font-extrabold text-slate-900 mt-1">{remaining}</p>
-          <p className="text-xs text-slate-400 mt-1">
-            {canSign() ? 'Vous pouvez signer de nouveaux documents.' : 'Limite atteinte — passez au plan supérieur.'}
-          </p>
         </div>
       </div>
 
@@ -96,6 +52,41 @@ export default function DashboardHome({ onNavigate }) {
           <p className="text-lg font-bold text-slate-900">Modèles</p>
           <p className="text-sm text-slate-500 mt-1">Réutilisez vos contrats types</p>
         </button>
+      </div>
+
+      {/* Usage card */}
+      <div className="grid sm:grid-cols-3 gap-4 mb-7">
+        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-[12px] text-slate-500 font-medium">Plan actuel</p>
+            <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">{currentPlan.name}</span>
+          </div>
+          <p className="text-2xl font-extrabold text-slate-900">
+            {currentPlan.price === 0 ? 'Gratuit' : `${currentPlan.price} €/mois`}
+          </p>
+          <button onClick={() => onNavigate('billing')} className="mt-3 text-xs font-semibold text-emerald-600 hover:text-emerald-700 cursor-pointer">
+            Gérer l'abonnement →
+          </button>
+        </div>
+        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
+          <p className="text-[12px] text-slate-500 font-medium">Documents ce mois</p>
+          <p className="text-2xl font-extrabold text-slate-900 mt-1">
+            {used} <span className="text-base font-medium text-slate-400">/ {limit === Infinity ? '∞' : limit}</span>
+          </p>
+          <div className="mt-3 h-1.5 rounded-full bg-slate-100 overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all"
+              style={{ width: limit === Infinity ? '30%' : `${Math.min(100, (used / limit) * 100)}%` }}
+            />
+          </div>
+        </div>
+        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs">
+          <p className="text-[12px] text-slate-500 font-medium">Documents restants</p>
+          <p className="text-2xl font-extrabold text-slate-900 mt-1">{remaining}</p>
+          <p className="text-xs text-slate-400 mt-1">
+            {canSign() ? 'Vous pouvez signer de nouveaux documents.' : 'Limite atteinte — passez au plan supérieur.'}
+          </p>
+        </div>
       </div>
 
       {/* Admin section */}
@@ -137,39 +128,7 @@ export default function DashboardHome({ onNavigate }) {
         </div>
       )}
 
-      {/* Recent documents */}
-      <div className="rounded-2xl bg-white border border-slate-200 shadow-xs overflow-hidden">
-        <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
-          <h2 className="font-bold text-slate-900">Documents récents</h2>
-          <button onClick={() => onNavigate('documents')} className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 cursor-pointer">
-            Voir tout
-          </button>
-        </div>
-        {recent.length === 0 ? (
-          <div className="p-8 text-center text-sm text-slate-500">
-            Aucun document pour le moment.
-          </div>
-        ) : (
-          <ul className="divide-y divide-slate-100">
-            {recent.map((d) => (
-              <li key={d.id} className="flex items-center justify-between gap-3 px-6 py-3 hover:bg-slate-50/50 transition">
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 grid place-items-center shrink-0">
-                    <Icon name="file-text" className="w-4 h-4" />
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-slate-900 truncate">{d.name}</p>
-                    <p className="text-[11px] text-slate-400">{formatDate(d.date)}</p>
-                  </div>
-                </div>
-                <button onClick={() => onNavigate('documents')} className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 cursor-pointer shrink-0">
-                  Ouvrir
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+
     </div>
   );
 }

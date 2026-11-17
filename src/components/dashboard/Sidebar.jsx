@@ -3,7 +3,7 @@ import Icon from '../common/Icon';
 import { useApp } from '../../context/AppContext';
 
 export default function Sidebar({ currentPage, onNavigate, isOpen, onClose }) {
-  const { isAdmin, user } = useApp();
+  const { isAdmin, user, plan, plans } = useApp();
   const mainNav = [
     { id: 'dashboard', label: 'Tableau de bord', icon: 'home' },
     { id: 'documents', label: 'Mes documents', icon: 'file-text' },
@@ -25,6 +25,14 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose }) {
     onNavigate(pageId);
     if (onClose) onClose();
   };
+
+  const nextPlanMap = {
+    starter: 'pro',
+    pro: 'business',
+    business: null,
+  };
+  const nextPlanId = nextPlanMap[plan] || null;
+  const nextPlan = nextPlanId ? plans[nextPlanId] : null;
 
   return (
     <>
@@ -141,15 +149,18 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose }) {
             </>
           )}
 
-          {!isAdmin && (
+          {!isAdmin && nextPlan && (
             <div className="relative overflow-hidden rounded-2xl bg-slate-900 p-4 mt-2">
             <div className="absolute -right-8 -top-8 w-24 h-24 bg-emerald-500/40 rounded-full blur-2xl"></div>
             <div className="relative">
               <div className="w-8 h-8 rounded-lg bg-white/10 grid place-items-center mb-2.5">
                 <Icon name="sparkles" className="w-4 h-4 text-white" />
               </div>
-              <p className="text-[13px] font-bold text-white leading-tight">Passez au plan Pro</p>
-              <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">Documents illimités</p>
+              <p className="text-[13px] font-bold text-white leading-tight">Passez au plan {nextPlan.name}</p>
+              <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                {nextPlan.price === 0 ? 'Gratuit' : `${nextPlan.price} €/mois`} ·{' '}
+                {nextPlan.docsPerMonth === Infinity || nextPlan.docsPerMonth == null ? 'Documents illimités' : `${nextPlan.docsPerMonth} documents/mois`}
+              </p>
               <button 
                 onClick={() => onNavigate('billing')} 
                 className="mt-3 w-full py-2 rounded-lg bg-white text-slate-900 text-[11px] font-bold hover:bg-slate-100 transition cursor-pointer"
